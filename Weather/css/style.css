@@ -1,0 +1,341 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+nav ul,
+nav li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*--start editing from here--*/
+a {
+    text-decoration: none;
+}
+
+.txt-rt {
+    text-align: right;
+}
+
+/* text align right */
+.txt-lt {
+    text-align: left;
+}
+
+/* text align left */
+.txt-center {
+    text-align: center;
+}
+
+/* text align center */
+.float-rt {
+    float: right;
+}
+
+/* float right */
+.float-lt {
+    float: left;
+}
+
+/* float left */
+.clear {
+    clear: both;
+}
+
+/* clear float */
+.pos-relative {
+    position: relative;
+}
+
+/* Position Relative */
+.pos-absolute {
+    position: absolute;
+}
+
+/* Position Absolute */
+.vertical-base {
+    vertical-align: baseline;
+}
+
+/* vertical align baseline */
+.vertical-top {
+    vertical-align: top;
+}
+
+/* vertical align top */
+nav.vertical ul li {
+    display: block;
+}
+
+/* vertical menu */
+nav.horizontal ul li {
+    display: inline-block;
+}
+
+/* horizontal menu */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block
+}
+
+progress {
+    vertical-align: baseline
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway";
+    color: white
+}
+
+/*--end reset--*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+
+/*-- main --*/
+
+.contain {
+
+    width: 30em;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.34);
+
+}
+
+.date {
+    font-size: 1.4em;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.8em;
+}
+
+/*-- agileinfo-text --*/
+.agileinfo-text {
+    display: grid;
+    grid-gap: 1em;
+    text-align: center;
+}
+
+.agileinfo-text h3 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.agileinfo-text h5 {
+    font-size: 0.9em;
+    color: #ececec;
+    font-weight: 100;
+    margin-top: 0.5em;
+}
+
+.agileinfo-text h2 {
+    font-size: 8em;
+    font-weight: 900;
+    color: rgba(255, 215, 1, 0.59);
+}
+
+.agileinfo-text h2 span {
+    font-weight: 100;
+    font-size: 0.5em;
+    vertical-align: text-top;
+}
+
+.agileinfo-text h4 {
+    font-size: 2em;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.agileinfo-text h6 {
+    font-size: .9em;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.w3layouts-slider {
+    margin: 1em;
+    width: 100%;
+}
+
+.item.agile-item {
+    float: left;
+    padding: 5px;
+    text-align: center;
+}
+
+.agile-item h6 {
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 300;
+}
+
+#weather-description {
+    text-transform: capitalize;
+}
+
+div {
+    padding: 0.5em;
+    object-fit: contain;
+    height: fit-content;
+}
+
+#weather-icon,
+#wind-icon {
+    margin-left: 2em;
+}
+
+.weather {
+    color: #FFFFFF;
+    display: block;
+    font-size: 200%;
+
+}
+
+.weather h6 {
+    float: right;
+    width: 70%;
+}
