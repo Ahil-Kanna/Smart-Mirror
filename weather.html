@@ -8,8 +8,8 @@
     <title>Weather</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../assets/lib/weather-icons/css/weather-icons.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/lib/weather-icons/css/weather-icons-wind.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/lib/weather-icons/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/lib/weather-icons/css/weather-icons-wind.min.css">
     <script type="application/x-javascript">
         addEventListener("load", function () {
             setTimeout(hideURLbar, 10000);
@@ -19,24 +19,29 @@
             window.scrollTo(0, 1);
         }
     </script>
-    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
     <script>
         $(document).ready(function () {
-            pageScroll();
             setInterval(function () {
                 document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
             }, 1000);
         });
     </script>
     <!-- sky icons -->
-    <script src="../js/skycons.js"></script>
+    <script src="/js/skycons.js"></script>
+
+
     <!-- //sky icons -->
 
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+                font-family: "Raleway";
+            }
+    </style>
 </head>
 
 <body>
-
     <div class="contain">
         <div class="agileinfo-text">
             <div class="date">
@@ -51,15 +56,12 @@
                     var daym = mydate.getDate()
                     if (daym < 10)
                         daym = "0" + daym
-                    var dayarray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-                        "Friday",
+                    var dayarray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
                         "Saturday")
-                    var montharray = new Array("January", "February", "March", "April", "May",
-                        "June", "July",
+                    var montharray = new Array("January", "February", "March", "April", "May", "June", "July",
                         "August", "September",
                         "October", "November", "December")
-                    document.write("" + daym + "  " + montharray[month] + "  " + year + " <br> " +
-                        dayarray[day] +
+                    document.write("" + daym + "  " + montharray[month] + "  " + year + " <br> " + dayarray[day] +
                         "")
                 </script>
                 <!-- //Date-JavaScript -->
@@ -77,11 +79,11 @@
                 <h2 class="wi wi-celsius" style="text-align: left"></h2>
             </div>
             <div class="weather">
-                <i id="weather-icon"></i>
+                <i id="weather-icon" style="color:white"></i>
                 <h6 id="weather-description"></h6>
             </div>
             <div class="weather">
-                <i id="wind-icon"></i>
+                <i id="wind-icon" style="color:white"></i>
                 <h6 id="wind-speed"></h6>
             </div>
 
@@ -93,8 +95,8 @@
                 jsonpCallback: "callback",
                 dataType: "jsonp",
                 success: function (location) {
-                    //$('#country').html(location.country_name);
-                    $('#state').html(location.state);
+                    $('#state').html(location.country_name);
+                    //$('#state').html(location.state);
 
                 }
             });
@@ -102,8 +104,8 @@
 
     </div>
 </body>
-<script src="../assets/lib/moment/moment.min.js"></script>
-<script src="../assets/js/weatherMapping.js"></script>
-<script src="../assets/js/weather.js"></script>
+<script src="/assets/lib/moment/moment.min.js"></script>
+<script src="/assets/js/weatherMapping.js"></script>
+<script src="/assets/js/weather.js"></script>
 
 </html>
