@@ -8,7 +8,7 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
 *[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
+	font-family: 'FontAwesome', sans-serif;
 }
 
 /* ---------- GENERAL ---------- */
@@ -41,7 +41,7 @@ table {
 	border-spacing: 0;
 }
 
-.container {
+.container2 {
 	height: 538px;
 	left: 50%;
 	margin: -255px 0 0 -245px;
@@ -85,7 +85,7 @@ table {
 	line-height: 4em;
 	text-align: center;
 	width: 4em;
-  color: white;
+	color: white;
 }
 
 .calendar .prev-month,
