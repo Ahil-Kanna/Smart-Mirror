@@ -226,6 +226,9 @@ body {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 h1 {
