@@ -174,6 +174,8 @@
             height="100%" width="100%"></iframe>
         <iframe src="calendar/calender.html" id="frame2" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px"
             height="100%" width="100%"></iframe>
+        <iframe src="Adafruit/notification.html" id="frame3" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px"
+            height="100%" width="100%"></iframe>
     </div>
     </div>
 
@@ -193,14 +195,24 @@
                 $("#indicator1").removeClass("active");
                 $("#indicator2").addClass("active");
                 setTimeout('toggleframe()', 4000);
-            } else {
+            } else if ($("#indicator2").hasClass("active")) {
                 $("#frame2").animate({
+                    "opacity": "0",
+                }, 250);
+                $("#frame3").animate({
+                    "opacity": "1",
+                }, 250);
+                $("#indicator2").removeClass("active");
+                $("#indicator3").addClass("active");
+                setTimeout('toggleframe()', 3000);
+            } else {
+                $("#frame3").animate({
                     "opacity": "0",
                 }, 250);
                 $("#frame1").animate({
                     "opacity": "1",
                 }, 250);
-                $("#indicator2").removeClass("active");
+                $("#indicator3").removeClass("active");
                 $("#indicator1").addClass("active");
                 setTimeout('toggleframe()', 8000);
             }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <title>Notification</title>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway";
+            background-color: black;
+            color: white;
+        }
+
+        img {
+            float: left;
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="data"></h1>
+
+
+</body>
+<script>
+    url = "https://io.adafruit.com/api/v2/Ahilkanna/feeds?X-AIO-Key=b05c688d47d249f3a6af0b00dd9b774c";
+    newApi(url);
+
+    function parseData(data) {
+        length = data.length;
+        if (length == 0) {
+            document.getElementById('data').innerHTML = 'Notifications empty';
+        }
+        for (i = 0; i < length; i++) {
+            let dat = data[i].last_value;
+            if (data[i].key == "sports") {
+                dat = JSON.parse(data[i].last_value);
+                document.body.innerHTML += '<div><img src="espn1.png" style="padding-top:1em"/><h1>' + dat.alert +
+                    '</h1></div>';
+                console.log(dat);
+            } else if (data[i].key == "messages") {
+                dat = JSON.parse(data[i].last_value);
+                if (dat.name == "") {
+                    dat.name = "Unknown";
+                }
+                document.body.innerHTML += '<div><img src="message.png"/><h1>' + dat.text + ' - ' + dat.name +
+                    '</h1></div>';
+            }
+            /*else if (data[i].key == "calendar") {
+                           dat = JSON.parse(data[i].last_value);
+                           document.body.innerHTML += '<div><img src="calendar.png"/><h1>' + dat.title + '</h1></div>';
+                       } else if (data[i].key == "notification") {
+                           dat = JSON.parse(data[i].last_value);
+                           document.body.innerHTML += '<div><img src="notification.png"/><h1>' + dat.title + '</h1></div>';
+                       }*/
+
+        }
+    }
+
+
+    function newApi(url) {
+        var xhReq = new XMLHttpRequest();
+        xhReq.open("GET", url, true);
+        xhReq.send();
+        xhReq.onreadystatechange = function () {
+            if (xhReq.readyState == 4 && xhReq.status == 200) {
+                parseData(JSON.parse(xhReq.responseText));
+            }
+        }
+    }
+</script>
+
+
+</html>
