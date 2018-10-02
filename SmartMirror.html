@@ -156,7 +156,7 @@
     </style>
 </head>
 
-<body>
+<body class="on">
 
     <div class="split left">
         <h1 style="margin-left: 0em;text-align: center">News Feed</h1>
@@ -219,5 +219,36 @@
         }
     </script>
 </body>
+<script>
+    url = "https://io.adafruit.com/api/v2/Ahilkanna/feeds/mhsensor?X-AIO-Key=b05c688d47d249f3a6af0b00dd9b774c";
+    sense();
+
+    function sense() {
+        newApi(url);
+    }
+
+    function parseData(data) {
+        if ($('body').hasClass("on") && data.last_value == 1) {
+            document.body.style.display = 'none';
+            $('body').removeClass("on");
+        } else if (data.last_value == 1) {
+            document.body.style.display = 'block';
+            $('body').addClass("on");
+        }
+        setTimeout('sense()', 2500);
+    }
+
+
+    function newApi(url) {
+        var xhReq = new XMLHttpRequest();
+        xhReq.open("GET", url, true);
+        xhReq.send();
+        xhReq.onreadystatechange = function () {
+            if (xhReq.readyState == 4 && xhReq.status == 200) {
+                parseData(JSON.parse(xhReq.responseText));
+            }
+        }
+    }
+</script>
 
 </html>
